@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Variables : MonoBehaviour {
 
-	public int speed = 10;
+	public float speed = 2;
 	// Use this for initialization
 	void Start () {
 	

@@ -44,7 +44,8 @@ public class Functions : MonoBehaviour {
 			Debug.Log ("You need to find a weapon!");
 			break;
 		}
-		void DisplayMessage(string .weaponName)
+
+		void DisplayMessage(string weaponName)
 		{
 			Debug.Log("You found the " + weaponName + "!");
 		}

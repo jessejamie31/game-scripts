@@ -3,13 +3,13 @@ using System.Collections;
 
 public class loop : MonoBehaviour {
 
-	int numCandybars = 5;
+	int numbadguys = 5;
 
 	// Use this for initialization
 	void Start () {
 	
-		for (int i = 0; i < numCandybars; i++) {
-			Debug.Log ("Creating candbar number: " + i);
+		for (int i = 0; i < numbadguys; i++) {
+			Debug.Log ("Creating badguy number: " + i);
 		}
 	}
 }

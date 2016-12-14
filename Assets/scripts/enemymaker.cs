@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class coroutine : MonoBehaviour {
+public class enemymaker : MonoBehaviour {
 
 	public Transform[] spawnPoints;
 	public Transform star;
@@ -10,7 +10,7 @@ public class coroutine : MonoBehaviour {
 
 	private int i = 0;
 
-	IEnumerator SpawnEnemy()
+	IEnumerator SpawnStars()
 	{
 		while (canSpawnStars) 
 		{
@@ -22,7 +22,7 @@ public class coroutine : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (SpawnEnemy ());
+		StartCoroutine (SpawnStars ());
 	}
 
 

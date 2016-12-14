@@ -1,31 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class coroutine : MonoBehaviour
-{
-	public float smoothing = 1f;
-	public Transform target;
+public class coroutine : MonoBehaviour {
 
+	public Transform[] spawnPoints;
+	public Transform star;
+	public float spawnFrequency = 1;
+	public bool canSpawnStars = true;
 
-	void Start ()
+	private int i = 0;
+
+	IEnumerator SpawnStars()
 	{
-		StartCoroutine(MyCoroutine(target));
-	}
-
-
-	IEnumerator MyCoroutine (Transform target)
-	{
-		while(Vector3.Distance(transform.position, target.position) > 0.5f)
+		while (canSpawnStars) 
 		{
-			transform.position = Vector3.Lerp(transform.position, target.position, smoothing * Time.deltaTime);
-
-			yield return null;
+			i = Random.Range (0, spawnPoints.Length - 1);
+			Instantiate (star, spawnPoints [i].position, Quaternion.identity);
+			yield return new WaitForSeconds (spawnFrequency);
 		}
-
-		print("Reached the target.");
-
-		yield return new WaitForSeconds(3f);
-
-		print("MyCoroutine is now finished.");
 	}
+
+	// Use this for initialization
+	void Start () {
+		StartCoroutine (SpawnStars ());
+	}
+
+
 }

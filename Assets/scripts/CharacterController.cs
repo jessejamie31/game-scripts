@@ -8,7 +8,7 @@ public class CharacterController : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		moveSpeed = 10f;
+		moveSpeed = 4f;
 	}
 	
 	// Update is called once per frame
